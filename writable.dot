@@ -1,0 +1,12 @@
+digraph writable {
+  drain;
+  error;
+  finish;
+  pipe;
+  unpipe;
+  nomoreevents[label="No More Events"];
+  close[label="close\n(optional)"];
+  close -> nomoreevents;
+  error -> finish;
+  pipe -> unpipe;
+}

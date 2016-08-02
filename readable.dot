@@ -1,0 +1,15 @@
+digraph readable {
+  close[label="close\n(optional)"];
+  end;
+  error;
+  readable;
+  data;
+  nomoreevents[label="No More Events"];
+
+  data -> data;
+  data -> readable -> end;
+  readable -> data;
+  close -> nomoreevents;
+
+  {end, error, readable, data} -> error;
+}
